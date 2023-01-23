@@ -5,9 +5,9 @@ namespace Api;
 public class Mutation
 {
     [GraphQLDescription("Creates a new instance of a trip for the authenticated member")]
-    public  Task<TripCreatedPayload> CreateTrip(Trip trip)
+    public async Task<Trip> CreateTrip([Service] ITripService tripService, TripInput input)
     {
-        throw new NotImplementedException();
+        return await tripService.CreateTrip(input);
     }
 }
 

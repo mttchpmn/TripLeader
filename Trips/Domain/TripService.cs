@@ -17,8 +17,8 @@ public class TripService : ITripService
         return _tripGateway.GetTrip(tripKey);
     }
 
-    public Task<Trip> CreateTrip(TripInput input)
+    public async Task<Trip> CreateTrip(TripInput input)
     {
-        throw new NotImplementedException();
+        return await _tripGateway.CreateTrip(input);
     }
 }
