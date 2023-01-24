@@ -1,3 +1,5 @@
+using Members.Model;
+
 namespace Trips.Model;
 
 public class Trip
@@ -7,6 +9,7 @@ public class Trip
     public string Title { get; set; }
     public TripStatus Status { get; set; }
     public Guid LeaderKey { get; set; }
+    public IEnumerable<Member> Members { get; set; }
 
     public DateTime DepartureDate { get; set; }
     public DateTime CompletionDate { get; set; }
