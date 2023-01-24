@@ -1,6 +1,6 @@
 ﻿namespace Trips.Model;
 
-public enum Activity
+public enum ActivityType
 {
     DoNotUse = 0,
     Hiking = 1,

@@ -29,7 +29,7 @@ public class TripGateway : ITripGateway
             input.SarTime,
             input.Route,
             input.Details,
-            input.Activity,
+            input.ActivityType,
             input.AbilityLevel,
             input.RequiredEquipment,
             input.AdditionalInformation

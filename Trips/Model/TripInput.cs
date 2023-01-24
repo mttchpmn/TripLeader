@@ -10,7 +10,7 @@ public class TripInput
 
     public string Route { get; set; }
     public string Details { get; set; }
-    public Activity Activity { get; set; }
+    public ActivityType ActivityType { get; set; }
     public AbilityLevel AbilityLevel { get; set; }
     public string[] RequiredEquipment { get; set; }
     public string AdditionalInformation { get; set; }

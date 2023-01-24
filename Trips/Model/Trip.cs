@@ -13,13 +13,13 @@ public class Trip
 
     public string Route { get; set; }
     public string Details { get; set; }
-    public Activity Activity { get; set; }
+    public ActivityType ActivityType { get; set; }
     public AbilityLevel AbilityLevel { get; set; }
     public string[] RequiredEquipment { get; set; }
     public string AdditionalInformation { get; set; }
     
     public Trip(int id, Guid key, string title, Guid leaderKey, DateTime departureDate, DateTime completionDate,
-        DateTime sarTime, string route, string details, Activity activity, AbilityLevel abilityLevel,
+        DateTime sarTime, string route, string details, ActivityType activityType, AbilityLevel abilityLevel,
         string[] requiredEquipment, string additionalInformation)
     {
         Id = id;
@@ -31,7 +31,7 @@ public class Trip
         SarTime = sarTime;
         Route = route;
         Details = details;
-        Activity = activity;
+        ActivityType = activityType;
         AbilityLevel = abilityLevel;
         RequiredEquipment = requiredEquipment;
         AdditionalInformation = additionalInformation;

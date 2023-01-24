@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trips", "Trips\Trips.csproj", "{2919C0E4-4AF0-421A-AD68-7A119CB0B159}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Members", "Members\Members.csproj", "{AC270964-35EE-4634-A834-CE36CF60F8E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{2919C0E4-4AF0-421A-AD68-7A119CB0B159}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2919C0E4-4AF0-421A-AD68-7A119CB0B159}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2919C0E4-4AF0-421A-AD68-7A119CB0B159}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC270964-35EE-4634-A834-CE36CF60F8E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC270964-35EE-4634-A834-CE36CF60F8E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC270964-35EE-4634-A834-CE36CF60F8E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC270964-35EE-4634-A834-CE36CF60F8E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

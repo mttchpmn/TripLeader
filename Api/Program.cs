@@ -1,4 +1,7 @@
 using Api;
+using Members.Domain;
+using Members.Domain.Data;
+using Members.Model;
 using Trips.Domain;
 using Trips.Domain.Data;
 using Trips.Model;
@@ -22,6 +25,9 @@ builder.Services.AddGraphQLServer()
 // Register DI services
 builder.Services.AddSingleton<ITripGateway, TripGateway>();
 builder.Services.AddSingleton<ITripService, TripService>();
+
+builder.Services.AddSingleton<IMemberService, MemberService>();
+builder.Services.AddSingleton<IMemberGateway, MemberGateway>();
 
 var app = builder.Build();
 
