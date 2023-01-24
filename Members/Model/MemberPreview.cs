@@ -12,4 +12,15 @@ public class MemberPreview
 
     public string Bio { get; set; }
     public IEnumerable<Activity> Activities { get; set; }
+    
+    public MemberPreview(Guid key, string firstName, string lastName, string profileImageUrl, string bio, IEnumerable<Activity> activities)
+    {
+        Key = key;
+        FirstName = firstName;
+        LastName = lastName;
+        ProfileImageUrl = profileImageUrl;
+        Bio = bio;
+        Activities = activities;
+    }
+
 }

@@ -5,3 +5,4 @@
 - API to update member with member details
 - Data persistence with Postgres
 - Logic to join trips
+- Authorization logic (can you access trip / can you access member)

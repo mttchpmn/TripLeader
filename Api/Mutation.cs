@@ -1,4 +1,5 @@
-﻿using Trips.Model;
+﻿using Members.Model;
+using Trips.Model;
 
 namespace Api;
 
@@ -9,9 +10,10 @@ public class Mutation
     {
         return await tripService.CreateTrip(input);
     }
-}
 
-public class TripCreatedPayload
-{
-    public int MyNUmber { get; set; }
+    [GraphQLDescription("Updates member details")]
+    public async Task<Member> UpdateMember([Service] IMemberService memberService, UpdateMemberInput input)
+    {
+        return await memberService.UpdateMember(input);
+    }
 }
