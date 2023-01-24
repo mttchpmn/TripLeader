@@ -5,6 +5,7 @@ public class Trip
     public int Id { get; set; }
     public Guid Key { get; set; }
     public string Title { get; set; }
+    public TripStatus Status { get; set; }
     public Guid LeaderKey { get; set; }
 
     public DateTime DepartureDate { get; set; }
