@@ -1,4 +1,6 @@
 using Api;
+using Api.Schema.Mutations;
+using Api.Schema.Queries;
 using Members.Domain;
 using Members.Domain.Data;
 using Members.Model;
@@ -18,8 +20,14 @@ builder.Services.AddControllers();
 // Configure Hot Chocolate
 builder.Services.AddGraphQLServer()
     .AddQueryType<Query>()
+    .AddTypeExtension<TripQuery>()
+    .AddTypeExtension<MemberQuery>()
+    
     .AddMutationType<Mutation>()
-    .AddMutationConventions(applyToAllMutations:true)
+    .AddTypeExtension<TripMutation>()
+    .AddTypeExtension<MemberMutation>()
+    .AddMutationConventions(applyToAllMutations: true)
+    
     .AddDefaultTransactionScopeHandler();
 
 // Register DI services
