@@ -1,8 +1,7 @@
 ﻿TODO
 
-- Auth using Auth0
-- Logic to create new member on Auth0 sign up
-- API to update member with member details
 - Data persistence with Postgres
+- Logic to create new member on Auth0 sign up
+- Authorization logic (can you access trip / can you access member) / Hot Choc Auth Policies
+- API to update member with member details
 - Logic to join trips
-- Authorization logic (can you access trip / can you access member)
