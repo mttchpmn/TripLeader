@@ -22,6 +22,11 @@ public class MemberService : IMemberService
         return _memberGateway.GetMember(memberKey);
     }
 
+    public Task<Member> GetMember(string authId)
+    {
+        return _memberGateway.GetMember(authId);
+    }
+
     public Task<Member> UpdateMember(UpdateMemberInput input)
     {
         return _memberGateway.UpdateMember(input);

@@ -1,9 +1,11 @@
+using System.Security.Claims;
 using Api.Schema.Mutations;
 using Api.Schema.Queries;
 using Members.Domain;
 using Members.Domain.Data;
 using Members.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Trips.Domain;
 using Trips.Domain.Data;
 using Trips.Model;
@@ -12,7 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddAuthorization();
+builder.Services.AddAuthorization(x =>
+{
+    x.AddPolicy("IsTripParticipant", p => p.Requirements.Add(new TripParticipantRequirement()));
+});
 
 // Configure Hot Chocolate
 builder.Services
@@ -62,3 +67,25 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+
+public class TripParticipantRequirement : IAuthorizationRequirement
+{
+}
+
+public class TripParticipantHandler : AuthorizationHandler<TripParticipantRequirement>
+{
+    private readonly IMemberService _memberService;
+    private readonly ITripService _tripService;
+
+    public TripParticipantHandler(IMemberService memberService, ITripService tripService)
+    {
+        _memberService = memberService;
+        _tripService = tripService;
+    }
+    
+    protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, TripParticipantRequirement requirement)
+    {
+        var authId = context.User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var member = await _memberService.GetMember(authId);
+    }
+}
