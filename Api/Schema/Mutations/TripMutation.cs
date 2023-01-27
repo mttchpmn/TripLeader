@@ -15,7 +15,7 @@ public class TripMutation
     
     [GraphQLDescription("Adds a member to a trip")]
     [Error(typeof(TripException))]
-    public async Task<Trip> AddMemberToTrip([Service] ITripService tripService, [Service] IMemberService memberService, ClaimsPrincipal claimsPrincipal, Guid memberKey, Guid tripKey)
+    public async Task<Trip> ApproveTripJoinRequest([Service] ITripService tripService, [Service] IMemberService memberService, ClaimsPrincipal claimsPrincipal, Guid memberKey, Guid tripKey)
     {
         var authId = claimsPrincipal.FindFirstValue(ClaimTypes.NameIdentifier);
 
@@ -27,7 +27,19 @@ public class TripMutation
             throw new TripException("Not authorized to update trip");
         }
         
-        return await tripService.AddMemberToTrip(member.Key, memberKey, tripKey);
+        return await tripService.ApproveTripJoinRequest(member.Key, memberKey, tripKey);
+    }
+    
+    [GraphQLDescription("Requests to join a trip")]
+    [Error(typeof(TripException))]
+    public async Task<Trip> CreateTripJoinRequest([Service] ITripService tripService, [Service] IMemberService memberService, ClaimsPrincipal claimsPrincipal, Guid tripKey)
+    {
+        var authId = claimsPrincipal.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        var member = await memberService.GetMember(authId);
+
+        
+        return await tripService.CreateTripJoinRequest(member.Key, tripKey);
     }
 }
 

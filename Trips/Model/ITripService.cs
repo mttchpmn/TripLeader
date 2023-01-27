@@ -9,4 +9,6 @@ public interface ITripService
     Task<bool> IsTripParticipant(Member member);
     Task<bool> IsTripAdmin(Member member);
     Task<Trip> AddMemberToTrip(Guid AdminKey, Guid memberKey, Guid tripKey);
+    Task<Trip> ApproveTripJoinRequest(Guid memberKey, Guid guid, Guid tripKey);
+    Task<Trip> CreateTripJoinRequest(Guid memberKey, Guid tripKey);
 }

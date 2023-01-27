@@ -37,4 +37,14 @@ public class TripService : ITripService
     {
         throw new NotImplementedException();
     }
+
+    public Task<Trip> ApproveTripJoinRequest(Guid memberKey, Guid guid, Guid tripKey)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<Trip> CreateTripJoinRequest(Guid memberKey, Guid tripKey)
+    {
+        throw new NotImplementedException();
+    }
 }
