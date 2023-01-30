@@ -5,6 +5,7 @@ namespace Trips.Model;
 public interface ITripService
 {
     Task<Trip?> GetTrip(Guid tripKey);
+    Task<IEnumerable<TripPreview>> GetTripPreviews();
     Task<Trip> CreateTrip(TripInput input);
     Task<bool> IsTripParticipant(Member member);
     Task<bool> IsTripAdmin(Member member);

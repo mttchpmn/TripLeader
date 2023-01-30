@@ -9,6 +9,13 @@ namespace Api.Schema.Queries;
 [ExtendObjectType(typeof(Query))]
 public class TripQuery
 {
+    [GraphQLDescription("Gets publicly available trip previews")]
+    public async Task<IEnumerable<TripPreview>> GetTripPreviews([Service] ITripService tripService)
+    {
+        return await tripService.GetTripPreviews();
+    }
+    
+    
     [GraphQLDescription("Gets full detail for a trip")]
     public async Task<Trip?> GetTripDetail(ClaimsPrincipal claimsPrincipal, [Service] ITripService tripService, [Service] IMemberService memberService, Guid tripKey)
     {
