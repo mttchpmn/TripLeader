@@ -14,10 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddAuthorization(x =>
-{
-    x.AddPolicy("IsTripParticipant", p => p.Requirements.Add(new TripParticipantRequirement()));
-});
+builder.Services.AddAuthorization();
 
 // Configure Hot Chocolate
 builder.Services
