@@ -5,3 +5,111 @@
 - Authorization logic (can you access trip / can you access member) / Hot Choc Auth Policies
 - API to update member with member details
 - Logic to join trips
+
+---
+
+Features:
+Milestone 1: Basic Trip Management
+- As a Member I want to create a trip
+- As a Member I want to view a feed of public trips
+- As a Member I want to search, sort, and filter the trip feed
+- As a Member I want to request to join a trip
+- As a Leader I want to respond to a trip join request
+- As a Leader I want to view all details of a trip and its Members
+- As a Leader I want to edit the details of a Trip
+- As a Leader I want to generate and download a trip manifest
+- As a Leader I want to update the Trip Status (to start, complete, or cancel a trip)
+
+Milestone: Member Profile
+- As a new user I want to create a Member Profile
+- As a Member I want to add detail to my Member Profile:
+    - Name
+    - Picture
+    - Age
+    - Cellphone
+    - Email
+    - Height *
+    - Weight *
+    - Fitness level *
+    - Medical conditions *
+- As a Member I want to add Emergency Contacts to my profile:
+    - Name
+    - Relationship
+    - Cellphone
+    - Email
+- As a Member I want to add Activities to my profile:
+    - Activity Type
+    - Experience Level
+- As a Member I want to add Equipment to my profile:
+    - Activity Type
+    - Equipment Type
+    - Make
+    - Model
+    - Photo
+    
+Milestone: Extended Trip Management
+- As a Trip Member I want to be able to join or create a group chat with all Members on the Trip
+- As a Trip Member I want to be able to suggest Trip Amendments to the Trip Leader
+- As a Trip Leader I want to be able to Approve or Reject a Trip Amendment
+- As a Trip Leader I want to be able to invite Members to the Trip by email
+- As a Trip Leader I want to be able to remove Members from the Trip
+- As a Trip Leader I want to be able to view additional Member detail such as fitness level and medical conditions
+    
+
+Milestone: Trip Tracking
+- As a Trip Member I want to track trip progress:
+    - Distance completed
+    - Distance to go
+    - Percentage complete
+    - Current position (map and coordinates)
+    - Current speed
+    - Average speed
+    - Estimated time to completion
+    - Time until SARTIME
+- As a Trip Leader I want to be able to see Trip Members on my map
+- As a Trip Member I want to signal an Urgency or Distress situation
+- As a Trip Leader I want to update my SARTIME while on trip
+- As a Trip Member I want the app to signal when I am overdue
+- As a Trip Member I want to upload the trip to Strava once complete
+
+Milestone: Buddy Connections
+- As a Member I want to request another member to be my Buddy
+- As a Member I want to respond to a request to be someone's Buddy
+- As a Member I want to see a list of all my Buddies
+- As a Member I want to be able to start a chat with a Buddy
+- As a Member I want to be able to view the Trips my Buddies have created or joined
+
+Milestone: Group Management
+- As a Member I want to create a Group
+- As a Group Leader I want to edit the Group Profile (name, description, logo)
+- As a Member I want to request to join a Group
+- As a Group Leader I want to respond to a request to join Group
+- As a Group Member I want to message all Members of the Group
+- As a Group Leader I want to create a Group Trip
+- As a Group Leader I want to create a recurring Group Trip
+
+---
+
+API Schema:
+
+Mutations:
+- Create Trip
+- Create Join Request
+- Approve Join Request
+- Update Trip Status
+- Generate Trip Manifest
+
+- Update Member Profile
+- Create Member Profile
+- Create Buddy Request
+- Approve Buddy Request
+
+---
+
+Unknowns:
+
+- Saving generated PDFs to Google Cloud Storage (and handling Auth)
+- Subscription model
+- Real time chat
+- Real time notifications
+- Geolocation and trip tracking
