@@ -8,7 +8,7 @@ public class TripInput
     public DateTime CompletionDate { get; set; }
     public DateTime SarTime { get; set; }
 
-    public string Route { get; set; }
+    public Route Route { get; set; }
     public string Details { get; set; }
     public ActivityType ActivityType { get; set; }
     public AbilityLevel AbilityLevel { get; set; }

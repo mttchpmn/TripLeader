@@ -15,15 +15,16 @@ public class Trip
     public DateTime CompletionDate { get; set; }
     public DateTime SarTime { get; set; }
 
-    public string Route { get; set; }
+    public Route Route { get; set; }
     public string Details { get; set; }
+    
     public ActivityType ActivityType { get; set; }
     public AbilityLevel AbilityLevel { get; set; }
     public string[] RequiredEquipment { get; set; }
     public string AdditionalInformation { get; set; }
     
     public Trip(int id, Guid key, string title, Guid leaderKey, DateTime departureDate, DateTime completionDate,
-        DateTime sarTime, string route, string details, ActivityType activityType, AbilityLevel abilityLevel,
+        DateTime sarTime, Route route, string details, ActivityType activityType, AbilityLevel abilityLevel,
         string[] requiredEquipment, string additionalInformation)
     {
         Id = id;

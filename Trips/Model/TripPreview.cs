@@ -9,7 +9,7 @@ public class TripPreview
     public DateTime DepartureDate { get; set; }
     public DateTime CompletionDate { get; set; }
 
-    public string Route { get; set; }
+    public Route Route { get; set; }
     public string Details { get; set; }
     public ActivityType ActivityType { get; set; }
     public AbilityLevel AbilityLevel { get; set; }
@@ -17,7 +17,7 @@ public class TripPreview
     public string AdditionalInformation { get; set; }
 
     public TripPreview(Guid key, string title, Guid leaderKey, DateTime departureDate, DateTime completionDate,
-        string route, string details, ActivityType activityType, AbilityLevel abilityLevel, string[] requiredEquipment,
+        Route route, string details, ActivityType activityType, AbilityLevel abilityLevel, string[] requiredEquipment,
         string additionalInformation)
     {
         Key = key;
